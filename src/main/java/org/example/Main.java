@@ -20,7 +20,14 @@ public class Main {
 
         try (BufferedReader lector = new BufferedReader(new FileReader(datos))) {
             String linea;
+            int posicion = 1;
 
+            while ((linea = lector.readLine()) != null) {
+                Matcher matcher = pattern.matcher(linea);
+                if (!matcher.matches()) {
+                    System.out.println("CURP inválida: " + linea + " en la posición " + posicion);
+                }
+                posicion++;
             }
         } catch (IOException e) {
             System.err.println("Error al leer el archivo: " + e.getMessage());
