@@ -18,7 +18,12 @@ public class Main {
         String ValidacionCurp = "^[A-Z]{1}[AEIOU]{1}[A-Z]{2}\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[A-Z0-9]{2}$";
         Pattern pattern = Pattern.compile(ValidacionCurp);
 
+        try (BufferedReader lector = new BufferedReader(new FileReader(datos))) {
+            String linea;
 
+            }
+        } catch (IOException e) {
+            System.err.println("Error al leer el archivo: " + e.getMessage());
         }
     }
 }
